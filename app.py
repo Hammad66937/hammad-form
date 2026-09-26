@@ -1,3 +1,4 @@
+```python
 from flask import Flask, render_template, request, redirect
 import sqlite3
 
@@ -21,6 +22,10 @@ def init_db():
 
     conn.commit()
     conn.close()
+
+
+# Initialize database when the app starts
+init_db()
 
 
 @app.route("/")
@@ -81,5 +86,5 @@ def delete(user_id):
 
 
 if __name__ == "__main__":
-    init_db()
-    app.run(debug=True)
+    app.run(debug=False)
+```
